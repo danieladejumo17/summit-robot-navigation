@@ -1,0 +1,12 @@
+# See full parameters list here http://wiki.ros.org/move_base#Parameters
+
+# Global and Local Planners
+## global_planners: "carrot_planner/CarrotPlanner", "global_planner/GlobalPlanner"
+base_global_planner: "navfn/NavfnROS"
+
+## local_planners: "base_local_planner/TrajectoryPlannerROS", "eband_local_planner/EBandPlannerROS", "teb_local_planner/TebLocalPlannerROS"
+base_local_planner: "dwa_local_planner/DWAPlannerROS"
+
+
+controller_frequency: 5  # HZ
+recovery_behaviour_enabled: true

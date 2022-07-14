@@ -1,0 +1,12 @@
+<launch>
+    <arg name="base_frame" default="base_footprint" />
+    <arg name="scan_topic" default="hokuyo_base/scan" />
+    <arg name="odom_frame" default="odom" />
+
+    <node pkg="gmapping" type="slam_gmapping" name="slam" output="screen" >
+        <param name="base_frame" value="$(arg base_frame)" />
+        <param name="odom_frame" value="$(arg odom_frame)" />
+        <rosparam file="$(find summit_mapping)/params/slam_gmapping_params.yml" command="load" />
+        <remap from="scan" to="$(arg scan_topic)" />
+    </node> 
+</launch>

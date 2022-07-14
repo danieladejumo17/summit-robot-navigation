@@ -1,0 +1,16 @@
+# Coordinate and tf frames
+global_frame: "map"
+
+# Map management parameters
+rolling_window: false
+track_unknown_space: true  # is this parameter valid here - should be in 'static', 'obstacle' layers
+static_map: true
+
+# Rate Parameters
+update_frequency: 5.0
+
+# Plugins
+plugins:
+  - {name: static, type: "costmap_2d::StaticLayer"}
+  - {name: obstacles_laser, type: "costmap_2d::VoxelLayer"}
+  - {name: inflation, type: "costmap_2d::InflationLayer"}

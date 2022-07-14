@@ -1,0 +1,13 @@
+<launch>
+    <arg name="map_file" default="$(find summit_mapping)/maps/summit_env.yaml" />
+    <arg name="scan_topic" default="hokuyo_base/scan" />
+
+    <include file="$(find summit_mapping)/launch/map_server.launch">
+        <arg name="map_file" value="$(arg map_file)" />
+    </include>
+
+    <node pkg="amcl" type="amcl" name="amcl">
+        <rosparam file="$(find summit_localization)/params/amcl_params.yml" command="load" />
+        <remap from="scan" to="$(arg scan_topic)" />
+    </node>
+</launch>

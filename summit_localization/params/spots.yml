@@ -1,0 +1,17 @@
+room:
+- x_pos: -3.66092
+- y_pos: -3.24682
+- z_orientation: -0.02692
+- w_orientation: 0.99964
+
+turtle:
+- x_pos: -2.38661
+- y_pos: 3.39911
+- z_orientation: 0.70624
+- w_orientation: 0.70797
+
+table:
+- x_pos: 4.30556
+- y_pos: 2.34966
+- z_orientation: -1.0
+- w_orientation: 0.00190

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- GAZEBO SIMULATION -->
+    <include file="$(find summit_xl_gazebo)/launch/main.launch" />
+
+    <!-- NAVIGATION NODES -->
+    <include file="$(find summit_path_planning)/launch/move_base.launch" />
+
+    <!-- SPOT RECORDER -->
+    <include file="$(find spot_recorder)/launch/spot_recorder.launch" />
+
+    <!-- RVIZ -->
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" 
+    args="-d $(find summit_path_planning)/rviz/path_planning.rviz" />
+
+    <!-- RQT ROBOT STEERING -->
+    <node pkg="rqt_robot_steering" type="rqt_robot_steering" name="robot_steering" 
+    output="screen" />
+
+    <!-- MAIN PROGRAM -->
+    <node pkg="summit_navigation" type="main.py" name="main_program" output="screen" />
+</launch>

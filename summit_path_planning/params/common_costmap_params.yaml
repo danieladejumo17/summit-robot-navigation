@@ -1,0 +1,36 @@
+# See full parameters here http://wiki.ros.org/costmap_2d#costmap_2d.2Flayered.Parameters
+
+# Robot Parameters
+footprint: [[-0.5, -0.33], [-0.5, 0.33], [0.5, 0.33], [0.5, -0.33]]
+footprint_padding: 0.01 # 1 cm
+
+# Coordinate frame and tf parameters
+robot_base_frame: "base_footprint"
+transform_tolerance: 0.5  # delay in seconds for which a tf transform can be missing
+
+# Rate parameters
+update_frequency: 4.0
+publish_frequency: 4.0  # costmap display frequency
+
+# Map management parameters
+resolution: 0.05  # some parameters can be overidden by the static map layer
+
+# TODO: 
+obstacle_range: 5.5 # is this parameter valid here - should be in 'obstacle' layer
+raytrace_range: 6.0 # is this parameter valid here - should be in 'obstacle' layer
+
+# Layers
+static: # http://wiki.ros.org/costmap_2d/hydro/staticmap
+  map_topic: "/map"
+  subscribe_to_updates: true
+  track_unknown_space: true # pass unknown space values as they are, otherwise, they are translated as FREE_SPACE
+
+obstacles_laser: # http://wiki.ros.org/costmap_2d/hydro/obstacles
+  observation_sources: laser  # space separated list of namespaces for observation sources - defined below.
+  obstacle_range: 7.0 # max dist. at which to insert an obstacle. Can also be defined per source
+  raytrace_range: 7.0 # max dist. at which to remove an obstacle. can also be defined per source
+  track_unknown_space: true # pass unknown space values as they are, otherwise, they are translated as FREE_SPACE
+  laser: {data_type: LaserScan, clearing: true, marking: true, topic: "scan", inf_is_valid: true}
+
+inflation:  # http://wiki.ros.org/costmap_2d/hydro/inflation
+  inflation_radius: 0.60

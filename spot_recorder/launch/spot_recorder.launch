@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="spot_recorder" type="spots_to_file.py" name="spot_recorder" output="screen" />
+</launch>

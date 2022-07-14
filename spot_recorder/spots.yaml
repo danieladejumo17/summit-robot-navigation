@@ -1,0 +1,42 @@
+-
+  label: Turtle
+  position:
+    x: -2.27759957426
+    y: 3.0728403944
+  orientation:
+    z: 0.932072843297
+-
+  label: Room
+  position:
+    x: -4.3316344138
+    y: -3.37445325635
+  orientation:
+    z: -0.247009760852
+-
+  label: South_Pole
+  position:
+    x: 2.00334279366
+    y: -4.51556404782
+  orientation:
+    z: -0.807221814168
+-
+  label: Corridor
+  position:
+    x: -3.83916454094
+    y: -0.0266520307575
+  orientation:
+    z: 0.994327870499
+-
+  label: Table
+  position:
+    x: 2.46313774913
+    y: 2.8210538524
+  orientation:
+    z: 0.430467892858
+-
+  label: North_Pole
+  position:
+    x: 1.73605639927
+    y: 5.73189985526
+  orientation:
+    z: 0.6966969698

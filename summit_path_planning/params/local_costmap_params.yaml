@@ -1,0 +1,16 @@
+# Coordinate and tf frames
+global_frame: "odom"
+
+# Map management parameters
+rolling_window: true
+width: 10
+height: 10
+# static_map: false
+
+# Rate Parameters
+update_frequency: 20
+
+# Plugins
+plugins:
+  - {name: obstacles_laser, type: "costmap_2d::ObstacleLayer"}
+  - {name: inflation, type: "costmap_2d::InflationLayer"}

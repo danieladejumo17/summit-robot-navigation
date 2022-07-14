@@ -1,0 +1,4 @@
+<launch>
+    <arg name="map_file" default="$(find summit_mapping)/maps/summit_env.yaml" />
+    <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_file)" />
+</launch>
