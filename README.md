@@ -13,7 +13,7 @@ Features:
 
 
 # Usage
-### 1. Open the project ROSDS
+### 1. Open the project on ROSDS
 Open the online ROS development environment in your browser by following [this link](https://app.theconstructsim.com/#/l/4e7b06f8/)
 
 ### 2. Launch the Simulation and Main Program
@@ -23,24 +23,25 @@ Open a web shell and launch the program using
 
 `roslaunch summit_navigation main.launch`
 
-This will start the Gazebo Simulation in window and launch the navigation program. This also launches **RVIZ**, **rqt_robot_steering**.
+This will start the Gazebo Simulation in a window and launch the navigation program. This also launches **RVIZ** and **rqt_robot_steering** GUIs.
 
 ### 3. Localize the Robot
-Open the **RVIZ** window and localize the robot by driving it around for few seconds. Use the **rqt_robot_steering** GUI to drive the robot.
+Open the **RVIZ** window and localize the robot by driving it around for a few seconds. Use the **rqt_robot_steering** GUI to drive the robot.
 
 The red _particle cloud_ spread will reduce as the confidence of the robot's position increases. Stop driving once this converges to a small area around the robot.
 
 ### 4. Register locations you'll like to command the robot to drive to
 _Skip to step 5 to use pre-registered spots_
 
-- Send a navigation goal to the robot using the **2d Nav Goal** tool from the **RVIZ** GUI.
+- Send a navigation goal to the robot using the **2d Nav Goal** tool from the **RVIZ** GUI's toolbar.
 - Open a new web shell and register that location using the service call:
 
 `source ~/catkin_ws/devel/setup.bash`
 
 `rosservice call /record_spot "label: '<location_name>'"`
 
-<location_name> is the name you'll like to register that spot with
+<location_name> is the name you'll like to register that spot with.
+
 Send more navigation goals and record as many spots as you want.
 
 - When you're done, end the spot recording operation by using:
@@ -63,7 +64,7 @@ The follwing location_names are already registered:
 
 _Enjoy!_
 
-Note: There is an issue with the program wrongly perceiving itself as stuck at doors. If this happens, just drive the bot forward/backward using the **rqt_robot_steering** gui for ~2 seconds. It should recover. If it doesn't, the `move_base` node gave up, just re-enter the command.
+Note: There is an issue with the program wrongly perceiving itself as stuck at doors. If this happens, just drive the bot forward/backward using the **rqt_robot_steering** GUI for ~2 seconds. It should recover. If it doesn't, the `move_base` node gave up, just re-enter the command.
 
 
 # Implementation
